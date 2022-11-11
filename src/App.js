@@ -1,5 +1,5 @@
 import "./App.css";
-
+import {useState} from 'react';
 
 function App() {
   /*
@@ -14,14 +14,14 @@ function App() {
   b.add eventlistene to button 
   c. create functions to update states 
   */
-
+  
 
 
   return (
     <>
       <header>this is a counter</header>
       <section className="counter">
-        <button className="counterBtnUp button">+</button>
+        <button className="counterBtnUp button" onClick={counterUp}>+</button>
         <div className="numberDisplay">0</div>
 
         <button className="counterBtnDown button">-</button>
