@@ -1,5 +1,7 @@
 import "./App.css";
-import {useState} from 'react';
+import { useState } from 'react';
+import Header from "./components/Header";
+import Counter from "./components/Counter";
 
 function App() {
   /*
@@ -15,18 +17,23 @@ function App() {
   c. create functions to update states 
   */
   
+  const [count, setCount] = useState(0)
+
+  function countUp (){
+    setCount((pre)=> pre + 1)
+  }
+  
+  function countDown() {
+    setCount(pre=>pre-1)
+  }
 
 
   return (
     <>
-      <header>this is a counter</header>
-      <section className="counter">
-        <button className="counterBtnUp button" onClick={counterUp}>+</button>
-        <div className="numberDisplay">0</div>
-
-        <button className="counterBtnDown button">-</button>
-      </section>
+      <Header />
+      <Counter count={count} countUp={countUp} countDown={countDown} />
       <footer>made by JX and CW</footer>
+    
     </>
   );
 }
